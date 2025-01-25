@@ -11,7 +11,7 @@
         <option value="America/New_York">New York (EST)</option>
         <option value="America/Chicago">Chicago (CST)</option>
         <option value="Europe/London">London (GMT)</option>
-        <option value="Asia/Mumbai">Mumbai (IST)</option>
+        <option value="Asia/Kolkata">Mumbai (IST)</option>
     </select>
 </div>
 <div class="stopwatch-container">
@@ -32,7 +32,7 @@
         function updateClock() {
             const timezone = document.getElementById('timezone').value;
             const now = new Date();
-            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             const timeString = now.toLocaleTimeString('en-US', options);
             document.getElementById('clock').textContent = timeString;
         }
@@ -69,7 +69,7 @@
         }
 
         //Timer
-                let timerInterval;
+        let timerInterval;
         let timerTime = 0;
 
         function startTimer() {
